@@ -1,0 +1,113 @@
+Data
+
+This is a countrywide traffic accident dataset, which covers 49 states of the United States.
+The data contains details of 3.5 million traffic accidents that took place in the United States, from February 2016 to June 2020.  There are 49 fields total and 10 Fields containing road and weather conditions that are in concern. 
+Data is collected using several data providers, including two APIs which provide streaming traffic event data. These APIs broadcast traffic events captured by a variety of entities, such as the US and state departments of transportation, law enforcement agencies, traffic cameras, and traffic sensors within the road-networks. 
+
+Source Data file:
+• US_Accidents_June20.csv: every line in the file represents a unique traffic accident (identified by the ID column), featuring various properties related to the accident as columns. Date range: February 2016 to June 2020
+• CA_Accidents_June20.csv : Test set to predict and validate the accuracy of the machine learning models built
+
+
+Description of the fields:
+
+ID:
+This is a unique identifier of the accident record.
+
+Severity:
+Shows the severity of the accident, a number between 1 and 4, where 1 indicates the least impact on traffic (i.e., short delay as a result of the accident) and 4 indicates a significant impact on traffic (i.e., long delay). Note that severity reported by different sources may differ in their underlying impact on traffic, so please separate data from different sources when doing severity-based analysis. 
+
+Description :  
+Shows natural language description of the accident.
+
+Number: 
+Shows the street number in address record.
+
+Street:  
+Shows the street name in address record.
+
+City:
+Shows the city in address record.
+
+County:
+Shows the county in address record.
+
+State:
+Shows the state in address record.
+
+Zipcode:
+Shows the zipcode in address record.
+
+Country:
+Shows the country in address record.
+
+Temperature(F):
+Shows the temperature (in Fahrenheit).
+
+
+Wind_Chill(F):
+Shows the wind chill (in Fahrenheit).
+
+Humidity(%):
+Shows the humidity (in percene).
+
+Pressure(in):
+Shows the air pressure (in inches).
+
+Visibility(mi):
+Shows visibility (in miles).
+
+
+Wind_Direction:
+Shows wind direction.
+
+
+Wind_Speed(mph):
+Shows wind speed (in miles per hour).
+
+Precipitation(in):
+Shows precipitation amount in inches, if there is any.
+
+Weather_Condition:
+Shows the weather condition (rain, snow, thunderstorm, fog, etc.)
+
+Sunrise_Sunset:
+Shows the period of day (i.e. day or night) based on sunrise/sunset.
+
+
+Approach
+
+Since there are 3.5 Million records abd 49 features the data is sampled to 700K observations and 20 essential features.
+Independent Variables selected: Temperature(F), Wind_Chill(F),Humidity(%),Pressure(in),Visibility(mi), Wind_Direction, Wind_Speed(mph),Precipitation(in), Weather_Condition,Sunrise_Sunset
+Dependent Variables: Severity* (1 - 4) 
+	*Note: For the interest of the audience the Severity will be categorized in to severe (Severity > 2) and slight (Severity  =< 2) as it is assumed to be more comprehensible.
+
+Data preparation
+• Load data
+• Sample the data
+• Pre-Process the data
+ 	Check for missing values (NaN)
+ 	Exploratory Visualization
+ 	Data Normalization
+ 	Convert any categorical features to numerical values (Hot encode if need)
+• Feature selection
+
+Data split
+• Split the data into Train set and test set
+
+Classification Models:
+• Decision Tree
+• Logistic Regression (Solver =  'saga' on larger datasets. Reference:https://towardsdatascience.com/dont-sweat-the-solver-stuff-aea7cddc3451 )
+
+
+Predict and Validate Models 
+• Load data (CA_Accidents_June20.csv)
+• Pre-Process the data
+• Create predictions using the classification models above
+• Validate the accuracy of the models using applicable indexes
+	Jaccard index
+    F1-score
+    LogLoss
+
+
+

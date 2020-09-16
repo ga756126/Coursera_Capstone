@@ -1,0 +1,7 @@
+ Introduction/Business Problem
+ 
+ "How accurately can we model the severity of accidents in California State based on past accident data covering the US?" 
+ 
+ The US government collects and publishes detailed information about traffic accidents across the country. 
+ This information includes, but is not limited to, geographical locations, weather conditions, type of vehicles, accident severity, number of casualties, etc. What this project intend to accomplish is to investigate if there is a relationship and can we accurately model the published accident conditions to the severity of the accidents in California.
+ The findings of the project will assist users to understand the risks of operating a vehicle in a knowing the expected conditions in California.
