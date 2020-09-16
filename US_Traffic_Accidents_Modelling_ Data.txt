@@ -44,7 +44,6 @@ Shows the country in address record.
 Temperature(F):
 Shows the temperature (in Fahrenheit).
 
-
 Wind_Chill(F):
 Shows the wind chill (in Fahrenheit).
 
@@ -57,10 +56,8 @@ Shows the air pressure (in inches).
 Visibility(mi):
 Shows visibility (in miles).
 
-
 Wind_Direction:
 Shows wind direction.
-
 
 Wind_Speed(mph):
 Shows wind speed (in miles per hour).
@@ -105,7 +102,7 @@ Predict and Validate Models
 • Pre-Process the data
 • Create predictions using the classification models above
 • Validate the accuracy of the models using applicable indexes
-	Jaccard index
+    Jaccard index
     F1-score
     LogLoss
 
